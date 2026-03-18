@@ -16,6 +16,7 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using System;
 using System.Diagnostics;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Rendering;
@@ -46,9 +47,15 @@ namespace AvaloniaEdit.Folding
                     _isFolded = value;
                     ValidateCollapsedLineSections(); // create/destroy CollapsedLineSection
                     _manager.Redraw(this);
+                    IsFoldedChanged?.Invoke(value);
                 }
             }
         }
+
+        /// <summary>
+        /// IsFolded が変化したときに呼ばれるコールバック。引数は新しい IsFolded の値。
+        /// </summary>
+        public Action<bool> IsFoldedChanged { get; set; }
 
         internal void ValidateCollapsedLineSections()
         {

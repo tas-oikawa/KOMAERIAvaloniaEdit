@@ -601,7 +601,7 @@ namespace AvaloniaEdit.Utils
 
         internal static void VerifyArrayWithRange(Span<T> array, int arrayIndex, int count)
         {
-            if (array == null)
+            if (array.IsEmpty)
                 throw new ArgumentNullException(nameof(array));
             if (arrayIndex < 0 || arrayIndex > array.Length)
             {

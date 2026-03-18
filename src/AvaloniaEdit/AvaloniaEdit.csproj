@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
     <WarningsNotAsErrors>0612,0618</WarningsNotAsErrors>
-    <PackageId>Avalonia.AvaloniaEdit</PackageId>
-    <PackageDescription>This project is a port of AvalonEdit, a WPF-based text editor for Avalonia.</PackageDescription>
-    <PackageTags>editor;code-editor;avalonia;text-editor;netstandard</PackageTags>
+    <AssemblyName>KOMAERI.AvaloniaEdit</AssemblyName>
+    <PackageId>KOMAERI.AvaloniaEdit</PackageId>
+    <PackageDescription>KOMAERI custom fork of AvaloniaEdit. Adds IsFoldedChanged callback to FoldingSection.</PackageDescription>
+    <PackageTags>editor;code-editor;avalonia;text-editor;netstandard;komaeri</PackageTags>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
