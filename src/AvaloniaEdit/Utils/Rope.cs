@@ -601,7 +601,11 @@ namespace AvaloniaEdit.Utils
 
         internal static void VerifyArrayWithRange(Span<T> array, int arrayIndex, int count)
         {
-            if (array.IsEmpty)
+            // Span<T> is a struct and can never be null.
+            // IsEmpty is true for both a null T[] (converted to empty Span) and a legitimately
+            // empty array (e.g. new T[0] with count=0). Only throw when count > 0, because
+            // passing an empty span with count=0 is a valid no-op (e.g. InsertText with "").
+            if (array.IsEmpty && count > 0)
                 throw new ArgumentNullException(nameof(array));
             if (arrayIndex < 0 || arrayIndex > array.Length)
             {
