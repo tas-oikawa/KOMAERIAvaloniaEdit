@@ -5,9 +5,12 @@
     <WarningsNotAsErrors>0612,0618</WarningsNotAsErrors>
     <AssemblyName>KOMAERI.AvaloniaEdit</AssemblyName>
     <PackageId>KOMAERI.AvaloniaEdit</PackageId>
+    <Version>11.4.1.1</Version>
+    <Authors>KigoOffice</Authors>
     <PackageDescription>KOMAERI custom fork of AvaloniaEdit. Adds IsFoldedChanged callback to FoldingSection.</PackageDescription>
     <PackageTags>editor;code-editor;avalonia;text-editor;netstandard;komaeri</PackageTags>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <RepositoryUrl>https://github.com/tas-oikawa/KOMAERIAvaloniaEdit</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
