@@ -1,14 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <WarningsNotAsErrors>0612,0618</WarningsNotAsErrors>
-    <AssemblyName>KOMAERI.AvaloniaEdit</AssemblyName>
     <PackageId>KOMAERI.AvaloniaEdit</PackageId>
-    <Version>11.4.1.1</Version>
+    <Version>11.5.0.0</Version>
     <Authors>KigoOffice</Authors>
     <PackageDescription>KOMAERI custom fork of AvaloniaEdit. Adds IsFoldedChanged callback to FoldingSection.</PackageDescription>
-    <PackageTags>editor;code-editor;avalonia;text-editor;netstandard;komaeri</PackageTags>
+    <PackageTags>editor;code-editor;avalonia;text-editor;komaeri</PackageTags>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <RepositoryUrl>https://github.com/tas-oikawa/KOMAERIAvaloniaEdit</RepositoryUrl>
   </PropertyGroup>
@@ -16,12 +15,10 @@
   <ItemGroup>
     <EmbeddedResource Include="**\*.xshd;**\*.resx;" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
     <AvaloniaResource Include="**\*.xaml;Assets\*;" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
-
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="System.Collections.Immutable" Version="1.6.0" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+    <PackageReference Include="Avalonia" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,12 +35,4 @@
       <LastGenOutput>SR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <Target Name="ChangeAliasesOfSystemDrawing" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
-    <ItemGroup>
-      <ReferencePath Condition="'%(FileName)' == 'Splat'">
-        <Aliases>SystemDrawing</Aliases>
-      </ReferencePath>
-    </ItemGroup>
-  </Target>
 </Project>
