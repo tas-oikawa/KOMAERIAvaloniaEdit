@@ -33,7 +33,7 @@ AvaloniaEdit currently consists of 2 packages
 
 - Create an [empty Avalonia application](https://docs.avaloniaui.net/docs/getting-started).
 - Add a the [nuget reference](https://www.nuget.org/packages/Avalonia.AvaloniaEdit/#versions-body-tab) to the latest version:
-  `<PackageReference Include="Avalonia.AvaloniaEdit" Version="x.y.z.t" />`
+  `<PackageReference Include="KOMAERI.AvaloniaEdit" Version="12.0.0.1" />`
 - Include the _needed styles_ into your `<Application.Styles>` in your `App.xaml`:
 
   ```xaml
@@ -50,23 +50,19 @@ AvaloniaEdit currently consists of 2 packages
     </Application.Styles>
   </Application>
   ```
-
-  - If you're using `0.10.x.y` based versions, include `<StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml" />`
-  - If you're `11.x.y` based versions, include `<StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />`
-
-- Finally, add the AvaloniaEdit editor into your window:
-  ```xaml
-  <Window xmlns="https://github.com/avaloniaui"
-          ...
-          xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
-          ...>
-    ...
-    <AvaloniaEdit:TextEditor Text="Hello AvaloniaEdit!"
-                             ShowLineNumbers="True"
-                             FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
-    ...
-  </Window>
-  ```
+* Finally, add the AvaloniaEdit editor into your window:
+    ```xaml
+    <Window xmlns="https://github.com/avaloniaui"
+            ...
+            xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+            ...>
+      ...
+      <AvaloniaEdit:TextEditor Text="Hello AvaloniaEdit!"
+                               ShowLineNumbers="True"
+                               FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
+      ...
+    </Window>
+    ```
 
 You can see the [Demo Application](https://github.com/AvaloniaUI/AvaloniaEdit/tree/master/src/AvaloniaEdit.Demo) as a reference.
 
@@ -103,7 +99,7 @@ GitHub Packagesにリリースするときは以下のコマンドをたたく�
 ```ps
 dotnet pack src/AvaloniaEdit/AvaloniaEdit.csproj -c Release
 
-dotnet nuget push src\AvaloniaEdit\bin\Release\KOMAERI.AvaloniaEdit.11.4.1.1.nupkg `
+dotnet nuget push src\AvaloniaEdit\bin\Release\KOMAERI.AvaloniaEdit.12.0.0.1.nupkg `
   --source "github" `
   --api-key $(gh auth token)
 ```
