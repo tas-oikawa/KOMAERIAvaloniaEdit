@@ -50,19 +50,20 @@ AvaloniaEdit currently consists of 2 packages
     </Application.Styles>
   </Application>
   ```
+
 * Finally, add the AvaloniaEdit editor into your window:
-    ```xaml
-    <Window xmlns="https://github.com/avaloniaui"
-            ...
-            xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
-            ...>
-      ...
-      <AvaloniaEdit:TextEditor Text="Hello AvaloniaEdit!"
-                               ShowLineNumbers="True"
-                               FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
-      ...
-    </Window>
-    ```
+  ```xaml
+  <Window xmlns="https://github.com/avaloniaui"
+          ...
+          xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+          ...>
+    ...
+    <AvaloniaEdit:TextEditor Text="Hello AvaloniaEdit!"
+                             ShowLineNumbers="True"
+                             FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
+    ...
+  </Window>
+  ```
 
 You can see the [Demo Application](https://github.com/AvaloniaUI/AvaloniaEdit/tree/master/src/AvaloniaEdit.Demo) as a reference.
 
@@ -99,7 +100,7 @@ GitHub Packagesにリリースするときは以下のコマンドをたたく�
 ```ps
 dotnet pack src/AvaloniaEdit/AvaloniaEdit.csproj -c Release
 
-dotnet nuget push src\AvaloniaEdit\bin\Release\KOMAERI.AvaloniaEdit.12.0.0.1.nupkg `
+dotnet nuget push src\AvaloniaEdit\bin\Release\KOMAERI.AvaloniaEdit.11.5.0.nupkg `
   --source "github" `
   --api-key $(gh auth token)
 ```
